@@ -1,8 +1,7 @@
-# action.yml
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  solution-file-full-path:  # id of input
+  solution-file-full-path: 
     description: 'Full Path to the solution file'
     required: true
 runs:

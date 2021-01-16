@@ -12,7 +12,11 @@ Explodes the build if any references to Pre-Release nuget packages.
 ## Example usage
 
 ```yaml
-uses: agoda-com/ga-nuget-alpha-dection@v1
-with:
-  solution-file-full-path: 'src/mySolution.sln'
+jobs:    
+  nuget-alpha:
+    name: Nuget PreRelease package check
+    steps:
+      - uses: agoda-com/ga-nuget-alpha-detection@v1
+        with:
+          solution-file-full-path: 'src/mySolution.sln'
 ```
