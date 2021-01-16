@@ -1,0 +1,12 @@
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  solution-file-full-path:  # id of input
+    description: 'Full Path to the solution file'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.solution-file-full-path }}
