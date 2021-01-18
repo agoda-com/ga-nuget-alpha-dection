@@ -16,6 +16,7 @@ jobs:
   nuget-alpha:
     name: Nuget PreRelease package check
     steps:
+      - uses: actions/checkout@v2    
       - uses: agoda-com/ga-nuget-alpha-detection@v1
         with:
           solution-file-full-path: 'src/mySolution.sln'
