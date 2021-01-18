@@ -5,7 +5,7 @@ write-host "Check Prerelease version of nuget package "
 $path = (Get-Item -Path ".\" -Verbose).FullName
 $allPackages = @{}
 $slnPath = $args[0]
-if(!Test-Path($slnPath))
+if(!(Test-Path($slnPath)))
 {
  Write-Host "File in solution-file-full-path was not found, please check the parameter value and try again"
  Write-Host "Listing Files in Directory for debugging purposes"
