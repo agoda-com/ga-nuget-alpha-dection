@@ -1,4 +1,4 @@
-#!/usr/bin/powershell -Command
+#!/usr/bin/pwsh -Command
 
 write-host "Check Prerelease version of nuget package "
 
