@@ -7,9 +7,10 @@ $allPackages = @{}
 $slnPath = $args[0]
 if(!(Test-Path($slnPath)))
 {
- Write-Host "File in solution-file-full-path was not found, please check the parameter value and try again"
  Write-Host "Listing Files in Directory for debugging purposes"
- Get-ChildItem .
+ $list = Get-ChildItem .
+ Write-Host $list
+ Write-Error "File in solution-file-full-path was not found, please check the parameter value and try again"
  exit 1
 }
 $slnFile = Get-Item $slnPath
