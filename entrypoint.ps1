@@ -7,7 +7,7 @@ $allPackages = @{}
 $slnPath = $args[0]
 $slnFile = Get-Item $slnPath
 $slnDir = Split-Path -parent $slnFile
-
+dir 
 function Get-PathsContainingAProjectFile($path){
     Get-Content $path | ForEach-Object {
         if($_.StartsWith("Project(")){
