@@ -84,7 +84,7 @@ $prnuget = $allPackages.GetEnumerator() | Where-Object { $_.Value.Keys.Count -gt
 } 
 
 $prnuget | ForEach-Object {
-    Write-Host "Prerelease version of nuget exists in the project $($_.name) on $($_.path) and version $($_.version)" -ForegroundColor red -BackgroundColor white
+    Write-Error "Prerelease version of nuget exists in the project $($_.name) on $($_.path) and version $($_.version)" -ForegroundColor red -BackgroundColor white
 }
 
 if($prnuget.Count -gt 0){
