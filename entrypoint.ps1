@@ -5,7 +5,8 @@ write-host "Check Prerelease version of nuget package "
 $path = (Get-Item -Path ".\" -Verbose).FullName
 $allPackages = @{}
 $slnPath = $args[0]
-$slnDir = Split-Path -parent $slnPath
+$slnFile = Get-Item $slnPath
+$slnDir = Split-Path -parent $slnFile
 
 function Get-PathsContainingAProjectFile($path){
     Get-Content $path | ForEach-Object {
