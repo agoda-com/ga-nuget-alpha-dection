@@ -6,27 +6,15 @@ write-host "Check Prerelease version of nuget package "
 
 $allPackages = @{}
 $slnPath = $args[0]
+
 if(!(Test-Path($slnPath)))
 {
  Write-Error "File in solution-file-full-path was not found, pleae make sure you are using teh checkout step, and/or please check the parameter value and try again"
  exit 1
 }
+
 $slnFile = Get-Item $slnPath
 $slnDir = Split-Path -parent $slnFile
-
-function Get-PathsContainingAProjectFile($path){
-    Get-Content $path | ForEach-Object {
-        if($_.StartsWith("Project(")){
-           $_.Split('"') | Where-Object { $_.EndsWith(".csproj") }
-        }
-    }
-}
-
-function Get-HasPackageReference($path){
-    $fileContent = Get-Content $path
-    $containsReference = $fileContent | % { $_ -match 'PackageReference'  }
-    return $containsReference
-}
 
 Get-PathsContainingAProjectFile($slnPath) | ForEach-Object { 
 
