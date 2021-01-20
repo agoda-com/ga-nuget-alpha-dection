@@ -1,5 +1,7 @@
 #!/usr/bin/pwsh -Command
 
+. $PSScriptRoot/functions.ps1
+
 write-host "Check Prerelease version of nuget package "
 
 $allPackages = @{}
