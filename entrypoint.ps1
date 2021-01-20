@@ -2,7 +2,6 @@
 
 write-host "Check Prerelease version of nuget package "
 
-$path = (Get-Item -Path ".\" -Verbose).FullName
 $allPackages = @{}
 $slnPath = $args[0]
 if(!(Test-Path($slnPath)))
@@ -23,14 +22,8 @@ function Get-PathsContainingAProjectFile($path){
 
 function Get-HasPackageReference($path){
     $fileContent = Get-Content $path
-
-    $isOk = $fileContent | ForEach-Object { $_ -match 'PackageReference'  }
-
-    if ($isOk -eq $true) {
-        return $true
-    } else {
-        return $false
-    }
+    $containsReference = $fileContent | % { $_ -match 'PackageReference'  }
+    return $containsReference
 }
 
 Get-PathsContainingAProjectFile($slnPath) | ForEach-Object { 
@@ -60,9 +53,6 @@ Get-PathsContainingAProjectFile($slnPath) | ForEach-Object {
                 }
             }
         } 
-
-    } else {
-        Write-Host "NOT OKAY: no PackageReference found in: " $fullName  
     }
 }
 
