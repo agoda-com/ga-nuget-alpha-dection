@@ -1,5 +1,5 @@
 BeforeAll { 
-   . $PSScriptRoot/Get.ps1
+   . $PSScriptRoot/entrypoint.ps1
 }
 
 Describe "Get-HasPackageReference" {
