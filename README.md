@@ -24,3 +24,7 @@ jobs:
         with:
           solution-file-full-path: 'src/mySolution.sln'
 ```
+
+## Thanks
+
+Thanks to [@jenol](https://github.com/jenol) who original help out with this code when it was in Teamcity
