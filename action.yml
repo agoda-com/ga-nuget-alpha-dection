@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Nuget Prerelease package detection'
+description: 'Stops People merging Pre-Release Nuget References'
 inputs:
   solution-file-full-path: 
     description: 'Full Path to the solution file'
